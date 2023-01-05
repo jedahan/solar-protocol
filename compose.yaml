@@ -2,6 +2,7 @@ services:
   common:
     image: localhost/solar-protocol/base:beta
     build: common
+    profiles: ["build"]
 
   datalogger:
     image: localhost/solar-protocol/datalogger
@@ -11,6 +12,7 @@ services:
       - data:/data
     environment:
       - FAKE_DATA
+      - LOGLEVEL
       - PLATFORM
 
   api:
